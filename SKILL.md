@@ -1,6 +1,6 @@
 ---
 name: isitsketchy
-description: Research whether a metal artist has Nazi ties, promotes NS ideology, or is considered sketchy/unsafe to support. Searches Metal Archives, Reddit r/isitsketch and r/rabm, community spreadsheets, and interviews.
+description: Research whether a metal artist has Nazi ties, promotes NS ideology, or is considered sketchy/unsafe to support. Searches Metal Archives, Reddit r/isitsketch and r/rabm, community spreadsheets, Discogs, and interviews.
 ---
 
 # IsItSketchy — Nazi/NSBM Research Skill
@@ -127,7 +127,52 @@ If an interview is behind a paywall or unavailable, note that in the verdict and
 
 ---
 
-### 6. General web search
+### 6. Discogs
+
+Discogs keeps NSBM acts in its database (it's a discography) but **blocks marketplace sales** of releases that incite violent hatred. A blocked release is a concrete, moderated signal — not just community opinion.
+
+**Step 1 — Find the artist page:**
+
+```
+site:discogs.com "<ARTIST>"
+```
+
+This surfaces the artist URL (e.g. `https://www.discogs.com/artist/12345-Artist-Name`).
+
+**Step 2 — Fetch the artist page:**
+
+Fetch the URL. Look at the discography list for any indication of blocked releases, NSBM labels, or community notes in the artist profile text.
+
+**Step 3 — Check each release for marketplace blocks:**
+
+For any releases that look suspicious (based on label, artwork, or title), fetch the individual release page. A blocked release shows:
+> *"This release is blocked from sale on Discogs. It is not permitted to sell this item in our Marketplace."*
+
+Note: a release can exist in the database but be blocked from sale. The block applies to the release, not the artist.
+
+**Step 4 — Check compilations ("Appears On"):**
+
+On the artist page, look for the "Appears On" section listing compilations. Fetch the compilation release page and check:
+- Is this compilation blocked from marketplace sale?
+- Does it feature a concentration of known NSBM acts?
+- Is it released on a known NSBM label?
+
+Participating in NSBM compilations is a meaningful red flag even if the band's own releases are not blocked.
+
+Search additionally:
+```
+site:discogs.com "<ARTIST>" compilation
+```
+
+Look for:
+- Own releases blocked from marketplace
+- Compilations with blocked status or NSBM-identified co-artists
+- Artist profile text noting NSBM, NS ideology, or racialist content
+- Label associations (cross-reference with source 4, Tab 3)
+
+---
+
+### 7. General web search
 
 - Query: `"<ARTIST>" NSBM nazi "national socialist"`
 - Query: `"<ARTIST>" sketch racist white supremacist`
@@ -150,7 +195,9 @@ Look for: news coverage, scene commentary, label affiliations, lyrics analysis.
 
 6. **Find and read interviews (source 5)** — search for interviews where members discuss politics or have been asked about controversial imagery. Use these to fact-check or confirm claims from the lists above.
 
-7. **General web search (source 6)** — catch anything missed.
+7. **Search Discogs (source 6)** — find the artist page, check for marketplace-blocked releases, and inspect "Appears On" compilations for NSBM associations.
+
+8. **General web search (source 7)** — catch anything missed.
 
 9. **Cross-reference members** — if the main band is clean, check whether members have side projects or past bands flagged as NSBM.
 
@@ -169,6 +216,7 @@ After completing research, deliver a structured verdict:
 
 ### Evidence Found
 - [source]: [what was found]
+- Discogs: [own releases blocked / appears on NSBM compilations / clean]
 
 ### Red Flags
 - (list specific red flags, or "None found")
